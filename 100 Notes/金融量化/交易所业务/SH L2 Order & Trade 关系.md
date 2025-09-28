@@ -25,8 +25,12 @@ flowchart TD
 
   Order1 ~~~ Order2
   
-  style Order1 fill:None
-  style Order2 fill:None
+  style Order1 fill:None;
+  style Order2 fill:None;
+  classDef order1 fill:#f9f;
+  classDef order2 fill:#bbf;
+  class T11,T12,T13 order1;
+  class T21,T22,T23 order2;
 ```
 ## 例1
 SH 交易所产生数据的顺序
@@ -41,4 +45,22 @@ flowchart TD
   T22@{ shape: circle }
   T23@{ shape: circle }
   
+  subgraph row1
+	  direction LR
+	  T11 --> T12 --> T13 --> O1
+  end
+
+  subgraph row2
+	  direction LR
+	  T21 --> T22 --> T23 --> O2
+  end
+  O1 --> T21
+  
+  style Order1 fill:None;
+  style Order2 fill:None;
+  
+  classDef order1 fill:#f9f;
+  classDef order2 fill:#bbf;
+  class O1,T11,T12,T13 order1;
+  class O2,T21,T22,T23 order2;
 ```
