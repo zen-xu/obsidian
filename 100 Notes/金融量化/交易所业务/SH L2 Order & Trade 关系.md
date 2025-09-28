@@ -35,7 +35,7 @@ flowchart TD
 ## 例1
 SH 交易所产生数据的顺序
 ```mermaid
-flowchart TD
+flowchart LR
   O1@{ shape: circle }
   T11@{ shape: circle }
   T12@{ shape: circle }
@@ -45,19 +45,9 @@ flowchart TD
   T22@{ shape: circle }
   T23@{ shape: circle }
   
-  subgraph row1
-	  direction LR
-	  T11 --> T12 --> T13 --> O1
-  end
-
-  subgraph row2
-	  direction LR
-	  T21 --> T22 --> T23 --> O2
-  end
+  T11 --> T12 --> T13 --> O1
   O1 --> T21
-  
-  style Order1 fill:None;
-  style Order2 fill:None;
+  T21 --> T22 --> T23 --> O2
   
   classDef order1 fill:#f9f;
   classDef order2 fill:#bbf;
