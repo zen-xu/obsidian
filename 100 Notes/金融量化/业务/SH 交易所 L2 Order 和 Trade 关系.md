@@ -1,6 +1,3 @@
----
-tags: 业务
----
 > 假定有 2 笔 Order, 每笔 Order 会产生 3 笔 Trade
 
 ```mermaid
@@ -58,3 +55,5 @@ flowchart LR
   class O1,T11,T12,T13 order1;
   class O2,T21,T22,T23 order2;
 ```
+- 在这个序列里 `biz_index` 递增
+- 同一笔订单的 [[trade|Trade]] 和 [[order|Order]] 是连续排布在一起, 所以 
