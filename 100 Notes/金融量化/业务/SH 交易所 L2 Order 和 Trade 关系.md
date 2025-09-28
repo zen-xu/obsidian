@@ -60,6 +60,7 @@ flowchart LR
 ```
 - 在这个序列里 [[biz_index]] 递增
 - 同一笔订单的 [[trade|Trade]] 和 [[order|Order]] 是连续排布在一起, 所以 [[biz_index]] 也连续
+
 ---
 
 ```mermaid
@@ -115,7 +116,9 @@ flowchart LR
 - 在这个序列里 [[biz_index]] 递增
 - 同一笔订单的 [[trade|Trade]] 和 [[order|Order]] 是连续排布在一起, 所以 [[biz_index]] 也连续
 - <mark style="background: #FFB8EBA6;">这个序列里 O1 并没被交易所生成, 意味着 O1 全部成交</mark>, 上交所不会产生 [[order|Order]] 数据, 所以只有 `O2` 的 3 笔 [[trade|Trade]] 
+
 ---
+
 ```mermaid
 ---
 title: 收到数据的顺序 case1
@@ -170,4 +173,6 @@ flowchart LR
   class O2,T21,T22,T23 order2;
 ```
 - 我们假定收到的 [[trade|Trade]] / [[order|Order]] 流本身是有序的
-- 
+- 这种情况下, 我们必须收到 `O2` 及 `T21` 后, 才能确定 `O1` 已补充完全, 然后可发生至下游
+    - `O2` 确认了 [[order|Order]] 流中已不存在 `O1`
+    - `T21` 确认了 [[trade|Trade]] 流中已不存在 `O1` 相关的 [[Trade]] 数据
