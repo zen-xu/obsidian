@@ -114,4 +114,5 @@ flowchart LR
 ```
 - 在这个序列里 [[biz_index]] 递增
 - 同一笔订单的 [[trade|Trade]] 和 [[order|Order]] 是连续排布在一起, 所以 [[biz_index]] 也连续
-- 这个序列里 `O1` 并没被交易所生成, 所以只有 3 笔 [[trade|Trade]]
+- <mark style="background: #FFB8EBA6;">这个序列里<<mark style="background: #FFB8EBA6;">并没被交易所生成</mark>, 所以只有 3 笔 [[trade|Trade]]
+
