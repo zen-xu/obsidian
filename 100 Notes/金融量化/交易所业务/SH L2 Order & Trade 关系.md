@@ -35,6 +35,10 @@ flowchart TD
 ## 例1
 SH 交易所产生数据的顺序
 ```mermaid
+---
+config:
+  layout: elk
+---
 flowchart LR
   O1@{ shape: circle }
   T11@{ shape: circle }
